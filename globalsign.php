@@ -1,6 +1,7 @@
 <?php
 
-$url = 'https://test-gcc.globalsign.com/qb/ws/GasQuery?wsdl';
+// new GLobalSign api endpoint
+$url = 'https://test-gcc.globalsign.com/kb/ws/v1/ServerSSLService?wsdl';
 $nameSpace = 'http://stub.order.gasapiserver.esp.globalsign.com';
 $client = new SoapClient($url);
 $client->_namespace = $nameSpace;
@@ -39,7 +40,8 @@ kT+h2sEZYU7k2ZwYoVnS212G1w==
             ],
         ],
         ],
-        'SubID'       => null,
+        'SubID'       => NULL,
+        'OrderID'     => NULL,
         'ContactInfo' => [
             'FirstName' => 'John',
             'LastName'  => 'Doe',
@@ -62,7 +64,7 @@ kT+h2sEZYU7k2ZwYoVnS212G1w==
     ],
 
 ];
-//var_dump($params);
+
 $res = $client->__soapCall('OVOrder', $params);
 echo '<pre>';
 var_dump($res);
